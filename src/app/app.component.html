@@ -339,6 +339,31 @@
   </div>
 
   <!-- Resources -->
+  <div>
+        
+       
+  </div>
+  <table border="2">
+    <thead>
+      <th>Name</th>
+      <th>phone</th>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let server of servers">
+        <td>{{server.name}}</td>
+        <td>{{server.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="showmsg"> 
+    test
+  </div>
+  <ul>
+    <li> Emp Name | Emp code</li>
+    <li *ngFor="let item of servers | paginate:{itemsPerPage: 5, currentPage:p}">{{item.id}} | {{item.title}} | {{item.img}} | <a href="javascript:void(0);" (click)="edit(item.id)">edit</a> | <a href="javascript:void(0);" (click)="remove(item.id)">remove</a></li>
+    </ul>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
